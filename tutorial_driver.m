@@ -252,7 +252,27 @@ clear
 %% Function files
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Initialize parameters
+Ndt = 2^10; % number of time steps
+Nsims = 10000; % number of simulations
+drift = 0.1; % drift, mean return
+vol = 0.2; % volatility, standard deviation of returns
+terminal = 1; % terminal time
+init_price = 10; % initial price
 
+% Call the function
+help GBM1
+[time1, price] =  GBM1(init_price, drift, vol, terminal, Ndt, Nsims);
+
+% Plot stock price simulations
+figure()
+p1 = plot(time1, price(:,1:10), '-', 'linewidth', 0.05);
+hold on;
+p2 = plot(time1, quantile(price,[0.1,0.5,0.9],2), '-k', 'linewidth', 1.5);
+title('Simulations of a Geometric Brownian Motion');
+xlabel('Time');
+ylabel('Value');
+set(gca, 'fontsize', 16);
 
 clear
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
