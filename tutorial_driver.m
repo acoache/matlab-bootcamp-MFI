@@ -16,10 +16,11 @@
 %% Matlab basic commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Assign objects to the workspace, semicolon suppresses outputs
-var1 = 40;
-var2 = 2.34
-var3 = 1/2;
+% Assign objects to the workspace
+var1 = 40
+var2 = 2.34; % semicolon suppresses outputs
+var3 = 1 + 2 + 3 ...
+    + 4; % three dots to write a command on multiple lines
 
 % Save variables to a .mat file
 save('test1.mat','var1');
@@ -56,6 +57,7 @@ clear
 % Ctrl + N creates a blank script
 % Ctrl + R comments highlighted code
 % Ctrl + T uncomments highlighted code
+% Ctrl + D opens the highlighted function
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Matrix manipulation
@@ -67,10 +69,26 @@ x = [1, 2, 3];
 y = [4; 5; 6];
 z1 = [7, 8; 9, 10];
 z2 = [2, 1; -3, 0.5];
+class(w)
+
 identity = eye(3); % identity matrix
 w1 = ones(2,3); % matrix of 1 values
 w2 = zeros(3,2); % matrix of 0 values
 w3 = linspace(0, 10, 50); %linearly spaced points
+
+% Booleans, it maps true to 1 and false to 0
+% Relational operators: <, >, <=, >=, ==, ~=
+% Logical operators: ||, &&, ~
+boolean1 = true;
+boolean2 = x < 2;
+class(boolean1)
+
+% Strings and characters
+s1 = 'A';
+s2 = 'Hello world';
+s3 = 'I''m using a single quote.'; % First way to get a single quote
+s4 = "I'm using a single quote."; % Second way to get a single quote
+class(s1)
 
 % Matrix indexing
 x = [1,3,4; 8,12,9; -5,20,0];
@@ -130,6 +148,25 @@ summary(T)
 
 clear
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Matlab formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Write text / data to a text file
+fprintf('Hello world \n'); % \n create a newline character
+fprintf('1 + 2 = %d \n', 1+2); % %d for integers
+fprintf('Pi is %e \n', pi); % %e for exponential notation
+fprintf('Pi is %f \n', pi); % %f for doubles
+fprintf('Pi is %.9f \n', pi); % adjust precision
+fprintf('Pi is %15.9f \n', pi); % adjust the field width
+fprintf(['My first name is %s and ' ...
+    'my last name starts with a %c \n'], ...
+    "Anthony", "C"); % %s for strings, %c for characters
+
+% For more information on formatting, see Matlab documentation:
+% https://www.mathworks.com/help/matlab/ref/fprintf.html#btf8xsy-1_sep_shared-formatSpec
+
+clear
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Standard functions and operators
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -152,6 +189,9 @@ sum(x,3) % sums along the 3rd dimension
 % Matrix indexing for 3+ dimensions works as the 2-dimension case
 x(1,[1,3,4],2:3)
 squeeze(x(1,[1,3,4],2:3)) % removes dimensions of length 1
+
+% List of elementary math functions
+help elfun
 
 clear
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
