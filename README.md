@@ -1,7 +1,7 @@
 ## Matlab Bootcamp
 
 
-These are Matlab functions/scripts used during the Matlab Bootcamp, held online for Masters of Financial Insurance (MFI) students at the University of Toronto on January 6-7, 2021. It is a basic overview of Matlab for those who are not too familiar with it.
+These are Matlab functions/scripts used during the Matlab Bootcamp, held online for Masters of Financial Insurance (MFI) students at the University of Toronto on January 2021 and 2022. It is a basic overview of Matlab for those who are not too familiar with it.
 
 Some useful concepts that are covered are:
 
